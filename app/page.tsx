@@ -13,19 +13,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   return (
     <>
-      <nav className={`fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 py-6 md:px-12 transition-all duration-300 ${isScrolled ? 'bg-black/80 backdrop-blur-md py-4' : 'mix-blend-difference'}`}>
+      <nav className="fixed top-0 left-0 right-0 z-[100] flex items-center justify-between px-6 py-6 md:px-12 transition-all duration-300 mix-blend-difference">
         <div className="flex items-center gap-2">
           <span className="font-display text-2xl md:text-3xl font-extrabold tracking-tighter uppercase text-white">Ordinary</span>
         </div>
