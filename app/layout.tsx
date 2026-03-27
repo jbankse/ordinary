@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${syne.variable} ${inter.variable}`}>
-      <body className="bg-[#0a0a0a] text-white antialiased selection:bg-[#FF3333] selection:text-white" suppressHydrationWarning>
+      <body className="bg-[#0a0a0a] text-white antialiased selection:bg-[#FF3333] selection:text-white overflow-x-hidden" suppressHydrationWarning>
         <SmoothScroll>
           {children}
         </SmoothScroll>

@@ -21,20 +21,20 @@ const Navbar = () => {
           <span className="font-display text-2xl md:text-3xl font-extrabold tracking-tighter uppercase text-white">Ordinary</span>
         </div>
         
-        <div className="flex items-center gap-4 md:gap-8">
-          <div className="hidden md:flex items-center gap-8 text-[10px] font-bold uppercase tracking-[0.2em] text-white">
+        <div className="flex items-center gap-4 lg:gap-12">
+          <div className="hidden lg:flex items-center gap-8 lg:gap-12 text-sm lg:text-base font-bold uppercase tracking-[0.2em] text-white">
             <a href="#services" className="hover:text-[#FF3333] transition-colors">Services</a>
             <a href="#infra" className="hover:text-[#FF3333] transition-colors">Infra</a>
             <a href="#work" className="hover:text-[#FF3333] transition-colors">Work</a>
           </div>
-          <button className="bg-white text-black px-4 md:px-6 py-2 rounded-none text-[10px] font-bold uppercase tracking-widest hover:bg-[#FF3333] hover:text-white transition-all">
+          <button className="hidden lg:block bg-white text-black px-4 lg:px-10 py-2.5 lg:py-4 rounded-none text-sm lg:text-base font-bold uppercase tracking-widest hover:bg-[#FF3333] hover:text-white transition-all">
             Connect
           </button>
           <button 
-            className="md:hidden text-white p-2"
+            className="lg:hidden text-white p-2"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
           </button>
         </div>
       </nav>
@@ -44,12 +44,13 @@ const Navbar = () => {
         initial={{ opacity: 0, x: '100%' }}
         animate={{ opacity: isOpen ? 1 : 0, x: isOpen ? 0 : '100%' }}
         transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-        className="fixed inset-0 z-[90] bg-black flex flex-col items-center justify-center gap-8 p-12 md:hidden"
+        className="fixed inset-0 z-[90] bg-black flex flex-col items-center justify-center gap-8 p-12 lg:hidden"
       >
-        <div className="flex flex-col items-center gap-8 text-2xl font-display font-extrabold uppercase tracking-tighter">
+        <div className="flex flex-col items-center gap-12 text-4xl lg:text-6xl font-display font-extrabold uppercase tracking-tighter">
           <a href="#services" onClick={() => setIsOpen(false)} className="hover:text-[#FF3333]">Services</a>
           <a href="#infra" onClick={() => setIsOpen(false)} className="hover:text-[#FF3333]">Infra</a>
           <a href="#work" onClick={() => setIsOpen(false)} className="hover:text-[#FF3333]">Work</a>
+          <a href="#connect" onClick={() => setIsOpen(false)} className="hover:text-[#FF3333] text-[#FF3333]">Connect</a>
         </div>
       </motion.div>
     </>
@@ -99,7 +100,7 @@ const Hero = () => {
           </p>
         </div>
 
-        <h1 ref={titleRef} className="hero-line font-display text-huge font-extrabold uppercase mb-12">
+        <h1 ref={titleRef} className="hero-line font-display text-huge font-extrabold uppercase mb-12 break-words max-w-full">
           Visual <br />
           <span className="text-outline">Infra</span> <br />
           Structure
@@ -122,7 +123,7 @@ const Hero = () => {
       </div>
 
       {/* Background Large Text */}
-      <div className="absolute -bottom-20 -right-20 text-[30vw] font-display font-black text-white/[0.02] uppercase pointer-events-none select-none">
+      <div className="absolute -bottom-20 right-0 text-[30vw] font-display font-black text-white/[0.02] uppercase pointer-events-none select-none translate-x-1/4">
         Ordinary
       </div>
     </section>
@@ -158,8 +159,8 @@ const Services = () => {
   return (
     <section id="services" ref={containerRef} className="py-24 md:py-32 px-6 md:px-12 bg-white text-black relative z-20">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-start mb-16 md:mb-24 gap-8">
-          <h2 className="font-display text-5xl md:text-8xl font-extrabold uppercase tracking-tighter leading-none">
+        <div className="flex flex-col lg:flex-row justify-between items-start mb-16 md:mb-24 gap-8">
+          <h2 className="font-display text-5xl md:text-7xl lg:text-8xl font-extrabold uppercase tracking-tighter leading-none break-words max-w-full">
             Managed <br /> <span className="text-[#FF3333]">Output</span>
           </h2>
           <p className="max-w-sm text-base md:text-lg font-medium leading-tight opacity-70">
@@ -217,7 +218,7 @@ const InfraSection = () => {
       <div className="absolute inset-0 bg-[#FF3333] -z-10" />
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 md:gap-24 items-center">
         <div>
-          <h2 className="infra-text font-display text-5xl md:text-9xl font-extrabold uppercase tracking-tighter leading-[0.85] mb-8 md:mb-12 text-black">
+          <h2 className="infra-text font-display text-5xl md:text-7xl lg:text-9xl font-extrabold uppercase tracking-tighter leading-[0.85] mb-8 md:mb-12 text-black break-words max-w-full">
             Visual <br /> Infra <br /> Structure™
           </h2>
           <p className="infra-text text-xl md:text-3xl font-bold text-white leading-tight mb-8 md:mb-12">
@@ -285,7 +286,7 @@ const Work = () => {
     <section id="work" ref={containerRef} className="py-0 overflow-hidden">
       <div className="px-6 md:px-12 py-24 border-b border-white/10">
         <div className="flex justify-between items-end">
-          <h2 className="font-display text-6xl md:text-8xl font-extrabold uppercase tracking-tighter">Archive</h2>
+          <h2 className="font-display text-5xl md:text-6xl lg:text-8xl font-extrabold uppercase tracking-tighter">Archive</h2>
           <span className="font-mono text-[10px] uppercase tracking-widest opacity-40">Selected_Works [04]</span>
         </div>
       </div>
@@ -310,8 +311,8 @@ const Work = () => {
 
             {/* Centered Content */}
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6 z-10">
-              <div className="overflow-hidden">
-                <h3 className="font-display text-4xl md:text-8xl font-extrabold uppercase tracking-tighter translate-y-0 md:translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out">
+              <div className="overflow-hidden max-w-full px-6">
+                <h3 className="font-display text-4xl md:text-6xl lg:text-8xl font-extrabold uppercase tracking-tighter translate-y-0 md:translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out break-words">
                   {p.title}
                 </h3>
               </div>
@@ -394,7 +395,7 @@ const Footer = () => {
 
 export default function Page() {
   return (
-    <main className="relative">
+    <main className="relative overflow-x-hidden">
       <Navbar />
       <Hero />
       <Services />
@@ -404,7 +405,7 @@ export default function Page() {
       {/* Final CTA */}
       <section className="py-24 md:py-40 px-6 md:px-12 bg-white text-black text-center">
         <div className="max-w-4xl mx-auto">
-          <h2 className="font-display text-5xl md:text-9xl font-extrabold uppercase tracking-tighter leading-none mb-8 md:mb-12">
+          <h2 className="font-display text-5xl md:text-7xl lg:text-9xl font-extrabold uppercase tracking-tighter leading-none mb-8 md:mb-12 break-words max-w-full">
             Build <br /> <span className="text-[#FF3333]">Better</span>
           </h2>
           <p className="text-lg md:text-2xl font-bold mb-8 md:mb-12 opacity-70">
